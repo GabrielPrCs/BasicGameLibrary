@@ -40,7 +40,7 @@ public final class Cell implements LocalizableInterface {
      * String descriptive of the property. As value accepts any object, and it
      * will be the responsibility of the programmer to properly handle this.
      */
-    private HashMap<String, Object> properties = null;
+    private HashMap<String, Object> property = null;
 
     /**
      * Creates a new cell in the position indicated, and with the property
@@ -50,10 +50,10 @@ public final class Cell implements LocalizableInterface {
      * @param y is the y-axis position of the cell.
      */
     public Cell(int x, int y) {
-        this.properties = new HashMap<>();
+        this.property = new HashMap<>();
         this.xPosition = x;
         this.yPosition = y;
-        this.setPropertie("Empty", true);
+        this.setProperty("Empty", true);
     }
 
     /**
@@ -93,8 +93,8 @@ public final class Cell implements LocalizableInterface {
      * @param key is the String that identifies the propertie.
      * @param value is the value of the propertie.
      */
-    public final void setPropertie(String key, Object value) {
-        this.properties.put(key, value);
+    public final void setProperty(String key, Object value) {
+        this.property.put(key, value);
     }
 
     /**
@@ -104,8 +104,8 @@ public final class Cell implements LocalizableInterface {
      * @param key is the String that identifies the propertie.
      * @return the propertie value if exists, null otherwise.
      */
-    public final Object getPropertie(String key) {
-        return this.properties.get(key);
+    public final Object getProperty(String key) {
+        return this.property.get(key);
     }
 
 }

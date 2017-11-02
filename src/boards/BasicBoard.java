@@ -73,9 +73,9 @@ public abstract class BasicBoard {
      * @param key is the String that identifies the propertie.
      * @param value is the value of the propertie.
      */
-    public void setCellPropertie(int x, int y, String key, Object value) {
+    public void setCellProperty(int x, int y, String key, Object value) {
         Cell cell = this.cells[x][y];
-        cell.setPropertie(key, value);
+        cell.setProperty(key, value);
     }
 
     /**
@@ -87,9 +87,9 @@ public abstract class BasicBoard {
      * @param key is the String that identifies the propertie.
      * @return the propertie value if exists, null otherwise.
      */
-    public Object getCellPropertie(int x, int y, String key) {
+    public Object getCellProperty(int x, int y, String key) {
         Cell cell = this.cells[x][y];
-        return cell.getPropertie(key);
+        return cell.getProperty(key);
     }
 
 }
