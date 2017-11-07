@@ -16,6 +16,7 @@
  */
 package entities;
 
+import boards.Cell;
 import exceptions.InvalidMovementException;
 import interfaces.MobileInterface;
 import java.awt.Point;
@@ -54,7 +55,7 @@ public abstract class MobileEntity extends BasicEntity implements MobileInterfac
      * @throws InvalidMovementException is an exception that occurs when the
      * object tries to make an invalid movement.
      */
-    protected abstract boolean validateMovement(Point currentPosition, Point delta) throws InvalidMovementException;
+    protected abstract boolean validateMovement(Cell currentPosition, Cell delta) throws InvalidMovementException;
 
     /**
      * Method that calculates the new rotation of the entity based on its
@@ -67,7 +68,7 @@ public abstract class MobileEntity extends BasicEntity implements MobileInterfac
      * object.
      * @param delta is a Java AWT Point with the dx and dy displacements.
      */
-    protected abstract void calculateRotation(Point currentPosition, Point delta);
+    protected abstract void calculateRotation(Cell currentPosition, Cell delta);
 
     /**
      * Method that moves the object that implements the interface a distance dx
@@ -81,7 +82,7 @@ public abstract class MobileEntity extends BasicEntity implements MobileInterfac
      * object tries to make an invalid movement.
      */
     @Override
-    public final void move(Point delta) throws InvalidMovementException {
+    public final void move(Cell delta) throws InvalidMovementException {
         /**
          * Validates the movement. If the validation fails, an
          * InvalidMovementException is thrown.
@@ -91,8 +92,8 @@ public abstract class MobileEntity extends BasicEntity implements MobileInterfac
          * If the validation pass, then moves the entity.
          */
         this.calculateRotation(this.getPosition(), delta);
-        this.xPosition += delta.x;
-        this.yPosition += delta.y;
+        this.xPosition += delta.getXPosition();
+        this.yPosition += delta.getYPosition();
     }
 
 }

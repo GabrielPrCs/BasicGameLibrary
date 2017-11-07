@@ -16,6 +16,7 @@
  */
 package interfaces;
 
+import boards.Cell;
 import java.awt.Point;
 
 /**
@@ -47,5 +48,5 @@ public interface LocalizableInterface {
      *
      * @return a Java AWT Point with the two points.
      */
-    Point getPosition();
+    Cell getPosition();
 }

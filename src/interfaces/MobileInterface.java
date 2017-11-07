@@ -16,6 +16,7 @@
  */
 package interfaces;
 
+import boards.Cell;
 import exceptions.InvalidMovementException;
 import java.awt.Point;
 
@@ -35,6 +36,6 @@ public interface MobileInterface {
      * @throws InvalidMovementException is an exception that occurs when the
      * object tries to make an invalid movement.
      */
-    void move(Point delta) throws InvalidMovementException;
+    void move(Cell delta) throws InvalidMovementException;
 
 }

@@ -91,5 +91,12 @@ public abstract class BasicBoard {
         Cell cell = this.cells[x][y];
         return cell.getProperty(key);
     }
-
+    
+    public int getRowCount() {
+        return this.maxY;
+    }
+    
+    public Cell[] getRow(int index) {
+        return this.cells[index];
+    }
 }

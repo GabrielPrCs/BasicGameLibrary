@@ -16,8 +16,6 @@
  */
 package boards;
 
-import interfaces.LocalizableInterface;
-import java.awt.Point;
 import java.util.HashMap;
 
 /**
@@ -27,7 +25,7 @@ import java.util.HashMap;
  *
  * @author gabpc
  */
-public final class Cell implements LocalizableInterface {
+public final class Cell {
 
     /**
      * Variables that stores the position of the Cell. They are final because a
@@ -61,7 +59,6 @@ public final class Cell implements LocalizableInterface {
      *
      * @return an integer with the actual x position.
      */
-    @Override
     public int getXPosition() {
         return this.xPosition;
     }
@@ -71,19 +68,8 @@ public final class Cell implements LocalizableInterface {
      *
      * @return an integer with the actual y position.
      */
-    @Override
     public int getYPosition() {
         return this.yPosition;
-    }
-
-    /**
-     * Method that returns the current position on the X axis and on the Y axis
-     *
-     * @return a Java AWT Point with the two points.
-     */
-    @Override
-    public Point getPosition() {
-        return new Point(this.xPosition, this.yPosition);
     }
 
     /**

@@ -16,6 +16,7 @@
  */
 package entities;
 
+import boards.Cell;
 import interfaces.LocalizableInterface;
 import java.awt.Point;
 
@@ -154,7 +155,7 @@ public abstract class BasicEntity implements LocalizableInterface {
      * @return a Java AWT Point with the two current positions.
      */
     @Override
-    public Point getPosition() {
-        return new Point(this.xPosition, this.yPosition);
+    public Cell getPosition() {
+        return new Cell(this.xPosition, this.yPosition);
     }
 }
